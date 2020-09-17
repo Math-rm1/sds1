@@ -14,20 +14,15 @@ import com.devsuperior.dspesquisa.services.GameService;
 @RestController
 @RequestMapping(value = "/games")
 public class GameResource {
-	
+
 	@Autowired
 	private GameService service;
-	
-	
-	
-	@GetMapping
-	public ResponseEntity<List<GameDTO>> findAll(){
-		List<GameDTO> list = service.findAll( );
-		return ResponseEntity.ok().body(list);
-		
-	}
-	
-	
 
-	
+	@GetMapping
+	public ResponseEntity<List<GameDTO>> findAll() {
+		List<GameDTO> list = service.findAll();
+		return ResponseEntity.ok().body(list);
+
+	}
+
 }

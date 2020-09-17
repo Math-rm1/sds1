@@ -29,8 +29,8 @@ public class Record implements Serializable {
 	@JoinColumn(name = "game_id")
 	private Game game;
 
-	// Constructor  Functions
-	
+	// Constructor Functions
+
 	public Record() {
 
 	}
@@ -43,7 +43,7 @@ public class Record implements Serializable {
 		this.moment = moment;
 		this.game = game;
 	}
-	
+
 	// Getter and Setters
 
 	public Long getId() {
@@ -85,7 +85,7 @@ public class Record implements Serializable {
 	public void setGame(Game game) {
 		this.game = game;
 	}
-	
+
 	// hashCode and equals
 
 	@Override
