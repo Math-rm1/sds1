@@ -46,7 +46,7 @@ public class RecordResource {
 		if (linesPerPage == 0) {
 			linesPerPage = Integer.MAX_VALUE;
 		}
-		
+
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 
 		Page<RecordDTO> list = service.findByMoments(minDate, maxDate, pageRequest);
