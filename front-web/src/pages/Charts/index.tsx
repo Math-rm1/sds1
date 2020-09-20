@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import Filters from '../../components/Filters';
 import './styles.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Filters from '../../components/Filters';
 import Chart from 'react-apexcharts';
 import { barOptions, pieOptions } from './chart-options';
-import axios from 'axios';
-import {buildBarSeries, getPlatformChartData, getGenderChartData} from './helpers';
 
+import { buildBarSeries, getPlatformChartData, getGenderChartData } from './helpers';
 
 type PieChartData = {
     labels: string[];
     series: number[];
-
 }
 
 type BarChartData = {
@@ -24,7 +23,7 @@ const initialPieData = {
 }
 
 const BASE_URL = 'http://localhost:8080'
- 
+
 const Charts = () => {
 
     const [barChartData, setBarChartData] = useState<BarChartData[]>([]);
@@ -32,7 +31,7 @@ const Charts = () => {
     const [genderData, setGenderData] = useState<PieChartData>(initialPieData);
 
     useEffect(() => {
-        async function getData(){
+        async function getData() {
             const recordsResponse = await axios.get(`${BASE_URL}/records`);
             const gamesResponse = await axios.get(`${BASE_URL}/games`);
 
@@ -45,11 +44,10 @@ const Charts = () => {
 
             const genderChartData = getGenderChartData(recordsResponse.data.content);
             setGenderData(genderChartData);
-
-
         }
+
         getData();
-        
+
     }, [])
 
     return (
@@ -88,19 +86,15 @@ const Charts = () => {
                             Gêneros
                         </h2>
                         <Chart
-                            options={{ ...pieOptions, labels: genderData?.labels}}
+                            options={{ ...pieOptions, labels: genderData?.labels }}
                             type="donut"
                             series={genderData?.series}
                             width="350"
                         />
-
                     </div>
-
-
                 </div>
             </div>
         </div>
-
     );
 }
 

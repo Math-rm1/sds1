@@ -6,14 +6,14 @@ type Props = {
     linkText: string;
 }
 
-const Filters = ({link, linkText} : Props) => (
-<div className="filters-container records-actions">
-    <Link to={link}>
-        <button className="action-filters">
-            {linkText}
-        </button>
-    </Link>
-</div>
+const Filters = ({ link, linkText }: Props) => (
+    <div className="filters-container records-actions">
+        <Link to={link}>
+            <button className="action-filters">
+                {linkText}
+            </button>
+        </Link>
+    </div>
 );
 
 export default Filters;

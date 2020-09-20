@@ -1,8 +1,8 @@
 import React from 'react';
+import './styles.css';
+import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
 import { ReactComponent as GamerImage } from '../../assets/gamer.svg';
-import { Link } from 'react-router-dom';
-import './styles.css';
 
 const Home = () => (
     <div className="home-container">
@@ -25,9 +25,6 @@ const Home = () => (
             </Link>
         </div>
         <GamerImage className="home-imagem" />
-
-
-
     </div>
 );
 

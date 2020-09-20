@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import axios from 'axios';
-import { RecordsResponse } from './types';
-import { formatDate } from './helpers';
 import Pagination from './Pagination';
 import Filters from '../../components/Filters';
-
-
+import { RecordsResponse } from './types';
+import { formatDate } from './helpers';
 
 const BASE_URL = 'http://localhost:8080'
 
@@ -20,13 +18,12 @@ const Records = () => {
     }, [activePage]);
 
     const handlePageChange = (index: number) => {
-        setActivePage(index)
-
+        setActivePage(index);
     }
 
     return (
         <div className="page-container">
-            <Filters link="/charts" linkText="VER GRÁFICO"/>
+            <Filters link="/charts" linkText="VER GRÁFICO" />
             <table className="records-table" cellPadding="0" cellSpacing="0">
                 <thead>
                     <tr>
@@ -52,9 +49,9 @@ const Records = () => {
                 </tbody>
             </table>
             <Pagination
-             activePage={activePage}
-             goToPage={handlePageChange}
-             totalPages={recordsResponse?.totalPages}/>
+                activePage={activePage}
+                goToPage={handlePageChange}
+                totalPages={recordsResponse?.totalPages} />
         </div>
     );
 };

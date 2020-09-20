@@ -8,7 +8,7 @@
 .filters-container.records-actions {
   justify-content: flex-end;
 }
- 
+
 .records-table {
   width: 100%;
   border-bottom: 10px solid var(--color-turquoise);
