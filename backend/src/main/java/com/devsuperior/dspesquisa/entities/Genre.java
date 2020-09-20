@@ -16,7 +16,6 @@ import javax.persistence.Table;
 public class Genre implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// the id attribute will be the primary key of the table genre
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,10 +25,7 @@ public class Genre implements Serializable {
 	@OneToMany(mappedBy = "genre")
 	private List<Game> games = new ArrayList<>();
 
-	// Constructor Functions
-
 	public Genre() {
-
 	}
 
 	public Genre(Long id, String name) {
@@ -37,8 +33,6 @@ public class Genre implements Serializable {
 		this.id = id;
 		this.name = name;
 	}
-
-	// Getters and Setters
 
 	public Long getId() {
 		return id;
@@ -59,8 +53,6 @@ public class Genre implements Serializable {
 	public List<Game> getGames() {
 		return games;
 	}
-
-	// hashCode and equals
 
 	@Override
 	public int hashCode() {
@@ -86,5 +78,4 @@ public class Genre implements Serializable {
 			return false;
 		return true;
 	}
-
 }

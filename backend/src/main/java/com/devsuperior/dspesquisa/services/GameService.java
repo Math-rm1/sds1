@@ -22,5 +22,4 @@ public class GameService {
 		List<Game> list = repository.findAll();
 		return list.stream().map(x -> new GameDTO(x)).collect(Collectors.toList());
 	}
-
 }

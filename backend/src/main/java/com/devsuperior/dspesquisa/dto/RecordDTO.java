@@ -18,7 +18,6 @@ public class RecordDTO implements Serializable {
 	private String genreName;
 
 	public RecordDTO() {
-
 	}
 
 	public RecordDTO(Record entity) {
@@ -29,7 +28,6 @@ public class RecordDTO implements Serializable {
 		gameTitle = entity.getGame().getTitle();
 		gamePlatform = entity.getGame().getPlatform();
 		genreName = entity.getGame().getGenre().getName();
-
 	}
 
 	public Long getId() {

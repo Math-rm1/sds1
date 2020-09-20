@@ -13,7 +13,6 @@ public class GameDTO implements Serializable {
 	private Platform platform;
 
 	public GameDTO() {
-
 	}
 
 	public GameDTO(Game entity) {

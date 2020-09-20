@@ -16,7 +16,6 @@ import javax.persistence.Table;
 public class Record implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// the id attribute will be the primary key of the table record
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -29,10 +28,7 @@ public class Record implements Serializable {
 	@JoinColumn(name = "game_id")
 	private Game game;
 
-	// Constructor Functions
-
 	public Record() {
-
 	}
 
 	public Record(Long id, String name, Integer age, Instant moment, Game game) {
@@ -43,8 +39,6 @@ public class Record implements Serializable {
 		this.moment = moment;
 		this.game = game;
 	}
-
-	// Getter and Setters
 
 	public Long getId() {
 		return id;
@@ -86,8 +80,6 @@ public class Record implements Serializable {
 		this.game = game;
 	}
 
-	// hashCode and equals
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -112,5 +104,4 @@ public class Record implements Serializable {
 			return false;
 		return true;
 	}
-
 }

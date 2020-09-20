@@ -10,7 +10,6 @@ public class RecordInsertDTO implements Serializable {
 	private long gameId;
 
 	public RecordInsertDTO() {
-
 	}
 
 	public String getName() {

@@ -29,7 +29,6 @@ public class RecordResource {
 	public ResponseEntity<RecordDTO> insert(@RequestBody RecordInsertDTO dto) {
 		RecordDTO newDTO = service.insert(dto);
 		return ResponseEntity.ok().body(newDTO);
-
 	}
 
 	@GetMapping
@@ -51,7 +50,5 @@ public class RecordResource {
 
 		Page<RecordDTO> list = service.findByMoments(minDate, maxDate, pageRequest);
 		return ResponseEntity.ok().body(list);
-
 	}
-
 }

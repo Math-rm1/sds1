@@ -7,5 +7,4 @@ import com.devsuperior.dspesquisa.entities.Game;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long> {
-
 }

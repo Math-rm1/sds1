@@ -20,7 +20,6 @@ import com.devsuperior.dspesquisa.entities.enums.Platform;
 public class Game implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// the id attribute will be the primary key of the table game
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -35,10 +34,7 @@ public class Game implements Serializable {
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new ArrayList<>();
 
-	// Constructor Functions
-
 	public Game() {
-
 	}
 
 	public Game(Long id, String title, Platform platform, Genre genre) {
@@ -48,8 +44,6 @@ public class Game implements Serializable {
 		this.platform = platform;
 		this.genre = genre;
 	}
-
-	// Getter and Setters
 
 	public Long getId() {
 		return id;
@@ -87,8 +81,6 @@ public class Game implements Serializable {
 		return records;
 	}
 
-	// hashCode and equals
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -113,5 +105,4 @@ public class Game implements Serializable {
 			return false;
 		return true;
 	}
-
 }
