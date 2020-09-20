@@ -1,13 +1,13 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Home from './pages/home';
+import Routes from './routes';
+
 
 function App() {
   return (
     <div>
-      <Header />
-      <Home />
+      <Routes />
     </div>
 
   );
